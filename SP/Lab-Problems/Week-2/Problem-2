@@ -1,0 +1,37 @@
+//Check if a specific inputted six-digit number is symmetric. This means that the first digit of the number should be the same as the last digit, the second digit should be the same as the second-to-last digit, and so on. 
+//For example, symmetric numbers are 123321, 805508, and 999999. If the number is symmetric, print 1, and if it's not symmetric print 0.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int num;
+    cin>>num;
+    int part1, part2, part3, part4, part5, part6;
+
+    part1=num/100000;
+
+    part2=num/10000;
+    part2=part2%10;
+
+    part3=num/1000;
+    part3=part3%10;
+
+    part4=num/100;
+    part4=part4%10;
+
+    part5=num/10;
+    part5=part5%10;
+
+    part6=num%10;
+
+    if(part1==part6 && part2==part5 && part3==part4){
+        cout<<"1"<<endl;
+    }
+    else {
+        cout << "0" << endl;
+    }
+
+    return 0;
+}
