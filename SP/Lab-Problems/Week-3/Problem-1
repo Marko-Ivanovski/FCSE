@@ -1,0 +1,33 @@
+//Виктор is a FINKI student who is currently thinking about how to plan his semester in order to eventually acquire a scholarship. 
+//Виктор knows himself well and has researched the classes, whereby he knows his grades for his future classes ahead of time before taking them. 
+//He wants to plan his semester so that he has the highest possible grade average for that semester.
+
+//On standard input, 6 grades are entered for the subjects. The first 5 grades are for compulsory classes that he must enroll in. The following class is choosable and optional to be taken, Виктор has the option to either enroll in the optional class or just enroll in his 5 compulsory to have a total of 5 or 6 subjects in a semester. He will choose the option that grants him the higher grade average.
+
+//On standard output print how many subjects are enrolled in and in a new line print 1 if Виктор acquires a scholarship, 0 if not. Виктор acquires a scholarship if he enrolled in 6 classes and has a grade average of 8.5 or better.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int predmet1, predmet2, predmet3, predmet4, predmet5, predmet6;
+    float prosek1, prosek2;
+    cin>>predmet1>>predmet2>>predmet3>>predmet4>>predmet5>>predmet6;
+    prosek1=(predmet1+predmet2+predmet3+predmet4+predmet5)/5.0;
+    prosek2=(predmet1+predmet2+predmet3+predmet4+predmet5+predmet6)/6.0;
+    if(prosek1<prosek2){
+        cout<<"Enrolled 6 subjects"<<endl;
+        if(prosek2>8.5){
+            cout<<"1"<<endl;
+        }
+        else{
+            cout<<"0"<<endl;
+        }
+    }
+    else{
+        cout<<"Enrolled 5 subjects"<<endl;
+        cout<<"0"<<endl;
+    }
+    return 0;
+}
