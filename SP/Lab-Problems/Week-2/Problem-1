@@ -1,0 +1,18 @@
+//Write a program in which four numbers are entered. If the product of the first two numbers is an even number and the product of the last two numbers is an odd number, print 1, otherwise print 0.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int num1, num2, num3, num4;
+    int proizvod1=1, proizvod2=1;
+    cin>>num1>>num2>>num3>>num4;
+    proizvod1=num1*num2;
+    proizvod2=num3*num4;
+    if(proizvod1%2==0 && proizvod2%2!=0)
+        cout<<"1"<<endl;
+    else
+        cout<<"0"<<endl;
+    return 0;
+}
