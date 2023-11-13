@@ -1,0 +1,10 @@
+//Try to create a new project with a .cpp file and enter the following program text:
+
+#include<iostream>
+
+using namespace std;
+
+int main () {
+    cout << "Hello, how are you?" << endl;
+    return 0;
+}
