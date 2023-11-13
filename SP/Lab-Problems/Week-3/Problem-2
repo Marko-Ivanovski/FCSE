@@ -1,0 +1,42 @@
+//Points earned from 5 activities for one subject are read for one student. A condition for a subject to be passed is to have over 50 points. 
+//If the student has 0-50 points he has not passed the subject, if he has 51-60 he has passed it with a 6, 61-70 he has passed it with a 7, 71-80 he has passed it with an 8, 81-90 he has passed it with a 9 and over 90 he has passed it with 10. 
+//To print the grade that the student had, his points and to print 1 if there is a requirement to get a higher grade, and otherwise 0. There is a requirement for a higher grade only if 1 point is missing to get a higher grade.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int ocena=0, aktivnost1, aktivnost2, aktivnost3, aktivnost4, aktivnost5, poeni, temp;
+    cin>>aktivnost1>>aktivnost2>>aktivnost3>>aktivnost4>>aktivnost5;
+    poeni=aktivnost1+aktivnost2+aktivnost3+aktivnost4+aktivnost5;
+    if(poeni<50){
+        cout<<"Predmetot ne e polozen"<<endl;
+    }
+    else{
+        if(poeni>50 && poeni<=60){
+            ocena=6;
+        }
+        if(poeni>60 && poeni<=70){
+            ocena=7;
+        }
+        if(poeni>70 && poeni<=80){
+            ocena=8;
+        }
+        if(poeni>80 && poeni<=90){
+            ocena=9;
+        }
+        if(poeni>90 && poeni<=100){
+            ocena=10;
+        }
+        cout<<"Ocenka: "<<ocena<<", poeni: "<<poeni<<endl;
+        temp=poeni%10;
+        if(temp==0 && ocena!=10){
+            cout<<"Ima uslov za povisoka ocenka"<<endl;
+        }
+        if(temp!=0 && ocena!=10){
+            cout<<"Nema uslov za povisoka ocenka"<<endl;
+        }
+    }
+    return 0;
+}
