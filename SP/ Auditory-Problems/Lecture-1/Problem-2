@@ -1,0 +1,11 @@
+//Add your first comments using "//"
+
+#include<iostream>
+using namespace std;
+
+int main () {
+    cout << ""Hello, how are you?" << endl;
+    // Add this line
+    cout << "Is something bothering you?" << endl;
+    return 0;
+}
