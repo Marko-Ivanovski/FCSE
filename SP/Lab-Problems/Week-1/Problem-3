@@ -1,0 +1,26 @@
+//Write a program that, for a five-digit number entered from standard input, will 'sharpen' it. A number is 'sharpened' if its leftmost and rightmost digits are removed. 
+//Output the sharpened number, and in the second line, print the sum of the digits that were sharpened.
+
+//Explanation: The number 54321 is sharpened to 432. The digits that are sharpened are 5 and 1.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int num;
+    int temp1;
+    int num1, num2;
+    int sum=0;
+    cin>>num;
+    temp1=num%10000;
+    temp1=temp1/10;
+    cout<<temp1<<endl;
+    //Tocno
+
+    num1=num/10000;
+    num2=num%10;
+    sum=num1+num2;
+    cout<<sum;
+    return 0;
+}
