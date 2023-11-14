@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float radius;
+    cin >> radius;
+
+    float perimeter = 2 * radius * 3.14;
+    float area = radius * radius * 3.14;
+
+    cout << "Perimeter = " << perimeter << endl;
+    cout << "Area = " << area << endl;
+    return 0;
+}
