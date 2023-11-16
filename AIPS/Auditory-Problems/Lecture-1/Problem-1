@@ -1,0 +1,163 @@
+import java.util.Scanner;
+
+class SLLNode<E> {
+    protected E element;
+    protected SLLNode<E> succ;
+
+    public SLLNode(E element, SLLNode<E> succ) {
+        this.element = element;
+        this.succ = succ;
+    }
+}
+class SLL<E>{
+    private SLLNode<E> first;
+
+    public SLL(){
+        this.first=null; //Empty list
+    }
+    public void insertFirst(E o){
+        SLLNode<E> ins = new SLLNode<E>(o, null);
+        ins.succ=first;
+        first=ins;
+    }
+    public void insertAfter(E o, SLLNode<E> node){
+        if(node!=null){
+            SLLNode<E> ins=new SLLNode<E>(o, node.succ);
+            node.succ=ins;
+        }
+        else{
+            System.out.println("The given element is null.");
+        }
+    }
+    public void insertBefore(E o, SLLNode<E> before){
+        if(first!=null){
+            SLLNode<E> temp=first;
+            if(first==before){
+                this.insertFirst(o);
+                return;
+            }
+            //first!=before
+            while(temp.succ!=before && temp.succ!=null){
+                temp=temp.succ;
+            }
+            if(temp.succ==before){
+                temp.succ=new SLLNode<E>(o, before);
+            }
+            else{
+                System.out.println("The element doesn't exist in the list.");
+            }
+        }
+    }
+    public void insertLast(E o){
+        if(first!=null){
+            SLLNode<E> temp = first;
+            while(temp.succ!=null){
+                temp=temp.succ;
+            }
+            temp.succ=new SLLNode<E>(o, null);
+        }
+        else{
+            insertFirst(o);
+        }
+    }
+    public E deleteFirst(){
+        if(first!=null){
+            SLLNode<E> temp=first;
+            first=first.succ;
+            return temp.element;
+        }
+        else{
+            System.out.println("The list is empty.");
+            return null;
+        }
+    }
+    public E delete(SLLNode<E> node){
+        if(first!=null){
+            SLLNode<E> temp = first;
+            if(first==node){
+                return this.deleteFirst();
+            }
+            while (temp.succ!=node && temp.succ.succ !=null){
+                temp=temp.succ;
+            }
+            if(temp.succ==node){
+                temp.succ=temp.succ.succ;
+                return node.element;
+            }
+            else{
+                System.out.println("The element doesn't exist in the list.");
+                return null;
+            }
+        }
+        else{
+            System.out.println("The list is empty.");
+            return null;
+        }
+    }
+    public SLLNode<E> find(E o){
+        if (first!=null){
+            SLLNode<E> temp = first;
+            while(!temp.element.equals(o) && temp.succ!=null){
+                temp=temp.succ;
+            }
+            if(temp.element.equals(o)){
+                return temp;
+            }
+            else {
+                System.out.println("The element doesn't exist in the list.");
+            }
+        }
+        else{
+            System.out.println("The list is empty.");
+        }
+        return null;
+    }
+    public int size(){
+        int listSize = 0;
+        SLLNode<E> temp = first;
+        while(temp!=null){
+            listSize++;
+            temp=temp.succ;
+        }
+        return listSize;
+    }
+    public void merge(SLL<E> in){
+        if (first!=null){
+            SLLNode<E> temp =first;
+            while (temp.succ!=null){
+                temp=temp.succ;
+            }
+            temp.succ=in.first;
+        }
+        else{
+            first=in.first;
+        }
+    }
+        public static int evenNumbers(SLL<Integer> list){
+            SLLNode<Integer> temp = list.first;
+            int res=0;
+            while (temp!=null){
+                if(temp.element%2==0){
+                    res++;
+                }
+                temp = temp.succ;
+            }
+            return res;
+        }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the number of elements in the list: ");
+        int n = sc.nextInt();
+
+        SLL<Integer> list = new SLL<>();
+
+        System.out.println("Enter the elements of the list: ");
+        for (int i=0;i<n;i++){
+            list.insertLast(sc.nextInt());
+        }
+
+        System.out.println("The number of even elements in the list: " + evenNumbers(list));
+    }
+}
