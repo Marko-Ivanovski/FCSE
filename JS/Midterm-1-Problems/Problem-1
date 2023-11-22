@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const addItem = () => {
+            let name = document.getElementById("name").value
+            let itemName = document.getElementById("itemName").value
+            let itemCode = document.getElementById("itemCode").value
+            let description = document.getElementById("description").value
+            let price = document.getElementById("price").value
+            let used = document.getElementById("used")
+
+            used = used.options[used.selectedIndex].text
+
+            let table = document.getElementById(used.toLowerCase() + "Table")
+
+            if (name && itemName && itemCode && description && price && used){
+                table.innerHTML += "<tr><td>" + name + "</td><td>" + itemName + "</td><td>" + itemCode + "</td><td>" + price + "</td><td><button class='sold' onclick='remove(this)'>sold</button></td></tr>"
+                update()
+            }
+            else{
+                alert("Ne moze da se vnese")
+                return
+            }
+        }
+        const remove = (element) => {
+            element.parentNode.parentNode.style.background = 'yellow'
+            element.parentNode.removeChild(element)
+            update()
+        }
+        const update = () => {
+            let num = document.getElementsByClassName("sold")
+            let active = document.getElementById("active")
+            active.innerHTML = num.length;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <div>
+            <h1>Online Shop</h1>
+        </div>
+        <div>
+            <label>Name and surname</label><input type="text" id="name">
+        </div>
+        <div>
+            <label>Item</label><input type="text" id="itemName">
+        </div>
+        <div>
+            <label>Item code</label><input type="text" id="itemCode">
+        </div>
+        <div>
+            <label>Item description</label><input type="text" id="description">
+        </div>
+        <div>
+            <label>Price</label><input type="text" id="price">
+        </div>
+        <div>
+            <label>Used</label>
+            <select id="used">
+                <option>Used</option>
+                <option>Unused</option>
+            </select>
+        </div>
+        <div>
+            <button onclick="addItem()">Add</button>
+        </div>
+        <div>
+            <p>Active ads <span id="active">0</span></p>
+        </div>
+        <div style="display: inline-block;">
+            <table id="usedTable">
+                <tr>
+                    <th>Name</th>
+                    <th>Item</th>
+                    <th>Item code</th>
+                    <th>Price</th>
+                    <th>Sold</th>
+                </tr>
+            </table>
+        </div>
+        <div style="display: inline-block;">
+            <table id="unusedTable">
+                <tr>
+                    <th>Name</th>
+                    <th>Item</th>
+                    <th>Item code</th>
+                    <th>Price</th>
+                    <th>Sold</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
