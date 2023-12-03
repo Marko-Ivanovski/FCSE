@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int date;
+    int day, month;
+    cout << "Enter your birthdate: ";
+    cin >> date;
+    day = date / 1000000;
+    month = (date / 10000) % 100;
+    cout << "Your birthdate is " << day << "." << month;
+    return 0;
+}
