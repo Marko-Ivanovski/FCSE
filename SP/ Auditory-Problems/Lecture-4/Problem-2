@@ -1,0 +1,20 @@
+    #include <iostream>
+    using namespace std;
+    
+    int main () {
+        int points, grade = 0;
+        cout<<"Vnesi points: "<<endl;
+        cin>>points;
+        if (points < 0 || points > 100)
+            cout<<"Invalid points!"<<endl;
+        else {
+            if (points > 90) grade = 10;
+            else if (points > 80) grade = 9;
+            else if (points > 70) grade = 8;
+            else if (points > 60) grade = 7;
+            else if (points > 50) grade = 6;
+            else grade = 5;
+            cout<<"Grade: "<<grade<<endl;
+        }
+        return 0;
+    }
