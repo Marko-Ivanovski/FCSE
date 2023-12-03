@@ -1,0 +1,25 @@
+    #include <iostream>
+    using namespace std;
+
+    int main() {
+        int pol_position, position, max_sum, sum, previous, next;
+        cin >> previous >> next;
+        pol_position = position = 2;
+        max_sum = sum = previous + next;
+        while (1) {
+            if (previous < 0 && next < 0) {
+                break;
+            }
+            sum = previous + next;
+            if (sum > max_sum) {
+                max_sum = sum;
+                pol_position = position;
+            }
+            previous = next;
+            cin >> next;
+            position++;
+        }
+        if (position > 2)
+            cout << "The numbers are at positions " << pol_position - 1 << " and " << pol_position << " and their sum is " << max_sum;
+        return 0;
+    }
