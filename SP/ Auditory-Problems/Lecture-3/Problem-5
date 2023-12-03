@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int number;
+    cout << "Enter the number: ";
+    cin >> number;
+    cout << "The most significant digit is " << (number / 100);
+    cout << ", and the least significant digit is " << (number % 10);
+    return 0;
+}
