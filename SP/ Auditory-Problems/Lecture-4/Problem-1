@@ -1,0 +1,17 @@
+    #include <iostream>
+    using namespace std;
+    
+    int main () {
+            float x, y;
+            cout<<"Enter coordinates:"<<endl;
+            cin>>x>>y;
+            if (x > 0 && y > 0)
+                    cout<<"I quadrant."<<endl;
+            if (x > 0 && y < 0)
+                    cout<<"IV quadrant."<<endl;
+            if (x < 0 && y > 0)
+                    cout<<"II quadrant."<<endl;
+            if (x < 0 && y < 0)
+                    cout<<"III quadrant."<<endl;
+            return 0;
+    }
