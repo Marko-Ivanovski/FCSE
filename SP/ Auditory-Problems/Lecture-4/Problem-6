@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int dogAge, humanAge;
+
+  cout << "Enter dog age: ";
+  cin >> dogAge;
+
+  if (dogAge < 0) {
+    cout << "Age must be a positive number" << endl;
+  } else {
+    if (dogAge <= 2) {
+      humanAge = dogAge * 10.5;
+    } else {
+      humanAge = 2 * 10.5 + (dogAge - 2) * 4;
+    }
+
+    cout << "Human age of the dog is: " << humanAge << endl;
+  }
+
+  return 0;
+}
