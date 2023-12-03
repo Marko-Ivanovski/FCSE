@@ -1,0 +1,33 @@
+  #include <iostream>
+    using namespace std;
+    
+    int main() {
+        float a, b, c;
+        cin>>a>>b>>c;
+        if ((a + b <= c) || (a + c <= b) || (b + c <= a))
+            cout<<"Can't create a triangle."<<endl;
+        else {
+            if (a >= b) {
+                float tmp = a;
+                a = b;
+                b = tmp;
+            }
+            if (a >= c) {
+                float tmp = a;
+                a = c;
+                c = tmp;
+            }
+            if (b >= c) {
+                float tmp = b;
+                b = c;
+                c = tmp;
+            } 
+            if (c * c == a * a + b * b) {
+                cout<<"This is a right triangle"<<endl;
+                cout<<"The area is: "<<a * b / 2;
+            } else {
+                cout<<"The triangle is NOT a right triangle"<<endl;
+            }
+        }
+        return 0;
+    }
