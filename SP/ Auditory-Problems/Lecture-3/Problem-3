@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float price;
+    cout << "Enter the product price: ";
+    cin >> price;
+    cout << "The total price of the product is " << price * 1.18;
+    return 0;
+}
