@@ -1,0 +1,29 @@
+#include<iostream>
+
+using namespace std;
+
+int main() {
+    int n, a[100], n_odd = 0, n_even = 0, sum_odd = 0, sum_even = 0;
+
+    cin >> n;
+
+    for (int i = 0; i < n; i++){
+        cin >> a[i];
+    }
+
+    for (int i = 0; i < n; i++) {
+        if (a[i] % 2) {
+            n_odd++;
+            sum_odd += a[i];
+        } else {
+            n_even++;
+            sum_even += a[i];
+        }
+    }
+
+    cout << "Sum even: " << sum_even << endl;
+    cout << "Sum odd: " << sum_odd << endl;
+    cout << "Rel: " << (float)n_even / n_odd << endl;
+
+    return 0;
+}
