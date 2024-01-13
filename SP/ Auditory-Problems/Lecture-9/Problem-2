@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+void count_down(int n){
+    if(n==0){
+        cout<<0<<" ";
+        return;
+    }
+    cout<<n<<" ";
+    count_down(n-1);
+}
+void count_up(int n){
+    if(n==0){
+        cout<<0<<" ";
+        return;
+    }
+    count_up(n-1);
+    cout<<n<<" ";
+}
+
+int main () {
+    int n;
+    cin>>n;
+
+    count_down(n);
+    cout<<endl;
+    count_up(n);
+
+    return 0;
+}
