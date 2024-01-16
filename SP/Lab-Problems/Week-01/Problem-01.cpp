@@ -1,5 +1,3 @@
-//Write a program that reads the radius of a circle from standard input. Output the perimeter and area of the circle.
-
 #include <iostream>
 
 using namespace std;
@@ -12,5 +10,6 @@ int main() {
     plostina=radius*radius*3.14;
     cout<<"Perimetar: "<<perimetar<<endl;
     cout<<"Plostina: "<<plostina<<endl;
+    
     return 0;
 }
