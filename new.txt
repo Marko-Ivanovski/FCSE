@@ -1,3 +1,3 @@
 7. π P.Firstname, P.Lastname σ M.Distribution = 'Walt Disney Studios' and (G.Name = 'Fantasy' or G.Name='Animation')(((ρ P Persons ⨝ P.Person_ID = PM.Person_ID ρ PM PersonsMovies) ⨝ PM.Movie_ID = M.Movie_ID ρ M Movies) ⨝ M.Genre_ID = G.Genre_ID ρ G Genres)
 
-8. π P.Firstname, P.Lastname σ (M.Distribution = '20th Century Fox' or M.Distribution = 'Paramount Pictures') and ¬(M.Distribution = '20th Century Fox' and M.Distribution = 'Paramount Pictures')(((ρ P Persons ⨝ P.Person_ID = PM.Person_ID ρ PM PersonsMovies) ⨝ PM.Movie_ID = M.Movie_ID ρ M Movies) ⨝ M.Genre_ID = G.Genre_ID ρ G Genres)
+8. π P.Firstname, P.Lastname σ (M.Distribution = '20th Century Fox' or M.Distribution = 'Paramount Pictures') and ¬(M.Distribution = '20th Century Fox' and M.Distribution = 'Paramount Pictures')(((ρ P Persons ⨝ P.Person_ID = PM.Person_ID ρ PM PersonsMovies) ⨝ PM.Movie_ID = M.Movie_ID ρ M Movies))
