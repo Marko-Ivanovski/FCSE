@@ -1,0 +1,71 @@
+CREATE TABLE Vraboten (
+    ID INT PRIMARY KEY,
+    ime VARCHAR(50),
+    prezime VARCHAR(50),
+    datum_r DATE,
+    datum_v DATE,
+    obrazovanie VARCHAR(100) NOT NULL,
+    plata DECIMAL(15, 2),
+    CONSTRAINT check_obrazovanie CHECK ( obrazovanie IN ('PhD', 'MSc', 'High School', 'BSc')),
+    CONSTRAINT check_datumi CHECK ( datum_r < datum_v )
+);
+
+CREATE TABLE Shalterski_rabotnik (
+    ID INT PRIMARY KEY,
+    CONSTRAINT fk_vraboten FOREIGN KEY (ID) REFERENCES Vraboten(ID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Klient (
+    MBR_k INT PRIMARY KEY,
+    ime VARCHAR(50),
+    prezime VARCHAR(50),
+    adresa VARCHAR(80) DEFAULT 'Ne e navedena',
+    datum DATE
+);
+
+CREATE TABLE Smetka (
+    MBR_k INT,
+    broj INT,
+    valuta VARCHAR(10),
+    saldo DECIMAL(15, 2),
+    PRIMARY KEY (MBR_k, broj),
+    CONSTRAINT fk_klient FOREIGN KEY (MBR_k) REFERENCES Klient(MBR_k) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Transakcija_shalter (
+    ID INT PRIMARY KEY,
+    ID_v INT ,
+    MBR_k INT,
+    MBR_k_s INT,
+    broj INT,
+    datum DATE,
+    suma DECIMAL(15, 2),
+    tip VARCHAR(100),
+    CONSTRAINT fk_shalterski_rabotnik FOREIGN KEY (ID_v) REFERENCES Shalterski_rabotnik(ID) ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT fk_klient FOREIGN KEY (MBR_k) REFERENCES Klient(MBR_k) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_smetka FOREIGN KEY (MBR_k_s, broj) REFERENCES Smetka(MBR_k, broj) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT check_datum CHECK ( datum NOT BETWEEN '2020-12-30' AND '2021-01-14' ),
+    CONSTRAINT check_tip CHECK ( tip IN ('uplata', 'isplata'))
+);
+
+CREATE TABLE Bankomat (
+    ID INT PRIMARY KEY,
+    lokacija VARCHAR(100) UNIQUE,
+    datum DATE,
+    zaliha DECIMAL(15, 2) DEFAULT 0,
+    CONSTRAINT check_zaliha CHECK ( zaliha >= 0 )
+);
+
+CREATE TABLE Transakcija_Bankomat (
+    ID INT PRIMARY KEY,
+    MBR_k_s INT,
+    broj INT,
+    ID_b INT DEFAULT -1,
+    datum DATE,
+    suma DECIMAL(15, 2),
+    CONSTRAINT fk_smetka FOREIGN KEY (MBR_k_s, broj) REFERENCES Smetka(MBR_k, broj) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_bankomat FOREIGN KEY (ID_b) REFERENCES Bankomat(ID) ON DELETE SET DEFAULT ON UPDATE CASCADE,
+    CONSTRAINT check_datum CHECK ( datum NOT BETWEEN '2020-12-30' AND '2021-01-14' )
+);
+
+DROP TABLE Vraboten
