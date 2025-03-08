@@ -25,7 +25,7 @@ This repository contains materials, assignments, and resources for various subje
 - [WP](Semester-5/WP) - Web Programming: Advanced web development, including front-end and back-end technologies in Java Spring Boot.
 
 ## Semester 6
-- [DNICK](Semester-6/DNICK) - Digital Forensics and Computer Crime: Investigation of digital crimes, evidence collection, and forensic analysis.
+- [DNICK](Semester-6/DNICK) - Design of Interaction Human-Computer: Working with implementing the Django framework, and using modern design patterns.
 - [EMT](Semester-6/EMT) - Electronic and Mobile Trade: E-commerce systems, mobile commerce, and digital payment systems.
 - [KIII](Semester-6/KIII) - Continuous Integration and Development : Managing IT infrastructure, deployment, and Devops management.
 - [ML](Semester-6/ML) - Machine Learning: Advanced topics of machine learning algorithms, data analysis, and predictive modeling.
