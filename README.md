@@ -1,6 +1,6 @@
 # FCSE - Faculty of Computer Science and Engineering
 
-This repository contains materials, assignments, and resources for various subjects at the Faculty of Computer Science and Engineering.
+This repository contains materials, assignments, and resources for some of the subjects at the Faculty of Computer Science and Engineering.
 
 ## Semester 1
 - [SP](Semester-1/SP) - Structured Programming: Introduction to programming concepts using C and C++, covering basic algorithms, data types, and control structures.
