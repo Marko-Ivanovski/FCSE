@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <title>Zadaca 1</title>
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-transparent">
+        <img src="../Images/zad1/logo.png" alt="Logo" class="p-4 mb-2" width="450">
+        <div class="container-fluid d-flex justify-content-between align-content-center">
+            <ul class="navbar-nav d-flex flex-grow-1 justify-content-evenly">
+                <li class="nav-item active"><h3 class="fw-semibold text-primary">Home</h3></li>
+                <li class="nav-item"><h3 class="fw-semibold">Tours</h3></li>
+                <li class="nav-item"><h3 class="fw-semibold">About</h3></li>
+                <li class="nav-item"><h3 class="fw-semibold">Advantages</h3></li>
+                <li class="nav-item"><h3 class="fw-semibold">Blog</h3></li>
+                <li class="nav-item"><h3 class="fw-semibold">Contacts</h3></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Main-->
+    <main role="main">
+        <!-- Jumbotron -->
+        <div class="position-relative">
+            <!-- Background Image -->
+            <img src="../Images/zad1/cover.jpg" alt="Cover Image" class="img-fluid w-100" style="height: 1000px; object-fit: cover;">
+
+            <!-- Overlay Text (Centered) -->
+            <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+                <h1 class="display-5 fw-bold text-start">The Best Trips Around Iceland Begin With Us</h1>
+            </div>
+
+            <!--Overlay Form (Positioned at Bottom Right)-->
+            <!--<div class="position-absolute bottom-0 end-0 p-4">-->
+            <!--    <div class="d-flex align-items-center">-->
+            <!--        &lt;!&ndash; Price Dropdown &ndash;&gt;-->
+            <!--        <div class="dropdown me-2">-->
+            <!--            <button class="btn btn-secondary dropdown-toggle" type="button" id="priceDropdown" data-bs-toggle="dropdown" aria-expanded="false">-->
+            <!--                Price-->
+            <!--            </button>-->
+            <!--            <ul class="dropdown-menu" aria-labelledby="priceDropdown">-->
+            <!--                <li><a class="dropdown-item" href="#">$100 - $200</a></li>-->
+            <!--                <li><a class="dropdown-item" href="#">$200 - $300</a></li>-->
+            <!--                <li><a class="dropdown-item" href="#">$300 - $400</a></li>-->
+            <!--            </ul>-->
+            <!--        </div>-->
+            <!--        &lt;!&ndash; Date Dropdown &ndash;&gt;-->
+            <!--        <div class="dropdown me-2">-->
+            <!--            <button class="btn btn-secondary dropdown-toggle" type="button" id="dateDropdown" data-bs-toggle="dropdown" aria-expanded="false">-->
+            <!--                Date-->
+            <!--            </button>-->
+            <!--            <ul class="dropdown-menu" aria-labelledby="dateDropdown">-->
+            <!--                <li><a class="dropdown-item" href="#">Today</a></li>-->
+            <!--                <li><a class="dropdown-item" href="#">Tomorrow</a></li>-->
+            <!--                <li><a class="dropdown-item" href="#">This Week</a></li>-->
+            <!--            </ul>-->
+            <!--        </div>-->
+            <!--        &lt;!&ndash; Blue Button &ndash;&gt;-->
+            <!--        <button class="btn btn-primary">Search</button>-->
+            <!--    </div>-->
+            <!--</div>-->
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+
+        <!-- Grid Container -->
+        <div class="container">
+            <!-- Heading -->
+            <div class="text-center mt-5">
+                <h1 class="display-1 fw-semibold">Best Sellers</h1>
+            </div>
+
+            <!-- First Row of Cards -->
+            <div class="row mt-4">
+                <!-- Card 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <!-- Card Image -->
+                        <img src="PATH_TO_IMAGE" class="card-img-top" alt="Winter Wonders">
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <p class="text-muted mb-1">7 days/6 nights</p>
+                            <h5 class="card-title fw-bold">Winter Wonders and Delicious Detours</h5>
+                        </div>
+                        <!-- Card Footer (Price) -->
+                        <div class="card-footer bg-white border-0">
+                            <p class="fw-semibold text-primary">From $1000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="PATH_TO_IMAGE" class="card-img-top" alt="South Shore">
+                        <div class="card-body">
+                            <p class="text-muted mb-1">3 days/2 nights</p>
+                            <h5 class="card-title fw-bold">South Shore and Glacier Lagoon Mini-Tour</h5>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <p class="fw-semibold text-primary">From $500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="PATH_TO_IMAGE" class="card-img-top" alt="Northern Lights">
+                        <div class="card-body">
+                            <p class="text-muted mb-1">7 days/6 nights</p>
+                            <h5 class="card-title fw-bold">Northern Lights Mystery</h5>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <p class="fw-semibold text-primary">From $900</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Row of Cards -->
+            <div class="row">
+                <!-- Card 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="PATH_TO_IMAGE" class="card-img-top" alt="Golden Circle">
+                        <div class="card-body">
+                            <p class="text-muted mb-1">7 days/6 nights</p>
+                            <h5 class="card-title fw-bold">Golden Circle Tour</h5>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <p class="fw-semibold text-primary">From $700</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="PATH_TO_IMAGE" class="card-img-top" alt="South Iceland Winter">
+                        <div class="card-body">
+                            <p class="text-muted mb-1">7 days/6 nights</p>
+                            <h5 class="card-title fw-bold">South Iceland Winter Explorer - Super Jeep Adventure</h5>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <p class="fw-semibold text-primary">From $1200</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="PATH_TO_IMAGE" class="card-img-top" alt="South Iceland Express">
+                        <div class="card-body">
+                            <p class="text-muted mb-1">7 days/6 nights</p>
+                            <h5 class="card-title fw-bold">South Iceland Express Road Trip</h5>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <p class="fw-semibold text-primary">From $1500</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Contact -->
+        <div>
+
+        </div>
+    </main>
+
+    <!--Footer-->
+    <footer>
+
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
